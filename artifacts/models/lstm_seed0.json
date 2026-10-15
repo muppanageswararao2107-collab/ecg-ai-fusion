@@ -1,0 +1,170 @@
+{
+  "model": "lstm",
+  "seed": 0,
+  "checkpoint": "/content/drive/MyDrive/ECG-AI-Project/artifacts/models/lstm_seed0.pt",
+  "best_epoch": 14,
+  "best_val_macro_auroc": 0.9241296448303993,
+  "n_params": 600966,
+  "train_time_s": 228.0,
+  "epochs_run": 22,
+  "device": "cuda",
+  "torch_version": "2.11.0+cu130",
+  "python": "3.13.15",
+  "git_commit": "not a git repository",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.43931327810448206,
+      "val_macro_auroc": 0.865935510758875,
+      "lr": 0.001,
+      "epoch_time_s": 10.6
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.3393022483877475,
+      "val_macro_auroc": 0.8933765441727661,
+      "lr": 0.001,
+      "epoch_time_s": 10.22
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.3117842720577333,
+      "val_macro_auroc": 0.9034139558807048,
+      "lr": 0.001,
+      "epoch_time_s": 10.19
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.29660392214966175,
+      "val_macro_auroc": 0.9084091592287358,
+      "lr": 0.001,
+      "epoch_time_s": 10.26
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.2863124788700418,
+      "val_macro_auroc": 0.9109952359597926,
+      "lr": 0.001,
+      "epoch_time_s": 10.31
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.27826471877901743,
+      "val_macro_auroc": 0.9141715107594571,
+      "lr": 0.001,
+      "epoch_time_s": 10.39
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.27025424340244536,
+      "val_macro_auroc": 0.9160002547044914,
+      "lr": 0.001,
+      "epoch_time_s": 10.42
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.26014694783571507,
+      "val_macro_auroc": 0.9205979414954385,
+      "lr": 0.001,
+      "epoch_time_s": 10.42
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.2560232629936733,
+      "val_macro_auroc": 0.9219729171793805,
+      "lr": 0.001,
+      "epoch_time_s": 10.35
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.24838625675953283,
+      "val_macro_auroc": 0.9209976509472778,
+      "lr": 0.001,
+      "epoch_time_s": 10.32
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.24092202441076213,
+      "val_macro_auroc": 0.9230221180544463,
+      "lr": 0.001,
+      "epoch_time_s": 10.29
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.23646953618258573,
+      "val_macro_auroc": 0.9186471723127616,
+      "lr": 0.001,
+      "epoch_time_s": 10.3
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.23214894854062507,
+      "val_macro_auroc": 0.91974372700281,
+      "lr": 0.001,
+      "epoch_time_s": 10.33
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.22523134154326907,
+      "val_macro_auroc": 0.9241296448303993,
+      "lr": 0.001,
+      "epoch_time_s": 10.35
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.21971185360285228,
+      "val_macro_auroc": 0.921251633772606,
+      "lr": 0.001,
+      "epoch_time_s": 10.36
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.21476370313864077,
+      "val_macro_auroc": 0.923159386790573,
+      "lr": 0.001,
+      "epoch_time_s": 10.39
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.20914557082264612,
+      "val_macro_auroc": 0.9220779493983458,
+      "lr": 0.001,
+      "epoch_time_s": 10.35
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.20461276089877226,
+      "val_macro_auroc": 0.9193445854203951,
+      "lr": 0.0005,
+      "epoch_time_s": 10.35
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.18280155515849367,
+      "val_macro_auroc": 0.9211613922476458,
+      "lr": 0.0005,
+      "epoch_time_s": 10.41
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.17558645783515459,
+      "val_macro_auroc": 0.9197242211915633,
+      "lr": 0.0005,
+      "epoch_time_s": 10.44
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.16749011638682434,
+      "val_macro_auroc": 0.9187904799705562,
+      "lr": 0.0005,
+      "epoch_time_s": 10.39
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.16310297053181724,
+      "val_macro_auroc": 0.9183612780102923,
+      "lr": 0.00025,
+      "epoch_time_s": 10.39
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "records_in_database": 21799,
+  "records_without_superclass_dropped": 411,
+  "records_used": 21388,
+  "limit_mode": false,
+  "sampling_rate": 100,
+  "classes": [
+    "NORM",
+    "MI",
+    "STTC",
+    "CD",
+    "HYP"
+  ],
+  "split_sizes": {
+    "train": 17084,
+    "val": 2146,
+    "test": 2158
+  },
+  "split_patients": {
+    "train": 14823,
+    "val": 1917,
+    "test": 1877
+  },
+  "label_counts": {
+    "train": {
+      "NORM": 7596,
+      "MI": 4379,
+      "STTC": 4186,
+      "CD": 3907,
+      "HYP": 2119
+    },
+    "val": {
+      "NORM": 955,
+      "MI": 540,
+      "STTC": 528,
+      "CD": 495,
+      "HYP": 268
+    },
+    "test": {
+      "NORM": 963,
+      "MI": 550,
+      "STTC": 521,
+      "CD": 496,
+      "HYP": 262
+    }
+  },
+  "patient_overlap_check": "passed"
+}

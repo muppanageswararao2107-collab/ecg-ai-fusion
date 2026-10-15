@@ -1,0 +1,14 @@
+[theme]
+base = "light"
+primaryColor = "#0E6E6A"
+backgroundColor = "#F8FAFB"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#1B2430"
+font = "sans serif"
+
+[server]
+# Upload limit in MB (config.yaml app.max_upload_mb is enforced again in code)
+maxUploadSize = 20
+
+[browser]
+gatherUsageStats = false

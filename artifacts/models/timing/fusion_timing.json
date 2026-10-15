@@ -1,0 +1,23 @@
+{
+  "model": "fusion",
+  "seed": 0,
+  "checkpoint": "/Users/m.nageswararao/Downloads/ecg-ai-fusion/artifacts/models/timing/fusion_timing.pt",
+  "best_epoch": 1,
+  "best_val_macro_auroc": 0.8904170405115817,
+  "n_params": 2211621,
+  "train_time_s": 46.0,
+  "epochs_run": 1,
+  "device": "mps",
+  "torch_version": "2.14.1",
+  "python": "3.12.15",
+  "git_commit": "not a git repository",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5021723031104727,
+      "val_macro_auroc": 0.8904170405115817,
+      "lr": 0.001,
+      "epoch_time_s": 45.9
+    }
+  ]
+}

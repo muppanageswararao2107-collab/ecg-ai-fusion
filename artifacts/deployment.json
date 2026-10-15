@@ -1,0 +1,116 @@
+{
+  "classes": [
+    "NORM",
+    "MI",
+    "STTC",
+    "CD",
+    "HYP"
+  ],
+  "selection": "best validation macro-AUROC per model type",
+  "thresholds_tuned_on": "validation fold 9",
+  "models": {
+    "cnn": {
+      "checkpoint": "artifacts/models/cnn_seed0.pt",
+      "seed": 0,
+      "thresholds": {
+        "NORM": 0.28,
+        "MI": 0.47,
+        "STTC": 0.34,
+        "CD": 0.48,
+        "HYP": 0.26
+      },
+      "val_macro_auroc": 0.9277407471645389,
+      "test_macro_auroc": 0.920813899219894,
+      "test_macro_auroc_ci95": [
+        0.9135752415415708,
+        0.928213241765031
+      ],
+      "test_macro_f1": 0.7413277415804216,
+      "n_params": 957189,
+      "display_name": "CNN (1D ResNet)"
+    },
+    "lstm": {
+      "checkpoint": "artifacts/models/lstm_seed1.pt",
+      "seed": 1,
+      "thresholds": {
+        "NORM": 0.53,
+        "MI": 0.25,
+        "STTC": 0.32,
+        "CD": 0.56,
+        "HYP": 0.22
+      },
+      "val_macro_auroc": 0.925632644261392,
+      "test_macro_auroc": 0.9204988466018019,
+      "test_macro_auroc_ci95": [
+        0.9135906149477099,
+        0.9281474310248891
+      ],
+      "test_macro_f1": 0.735213031109453,
+      "n_params": 600966,
+      "display_name": "LSTM (BiLSTM)"
+    },
+    "transformer": {
+      "checkpoint": "artifacts/models/transformer_seed0.pt",
+      "seed": 0,
+      "thresholds": {
+        "NORM": 0.48,
+        "MI": 0.39,
+        "STTC": 0.22,
+        "CD": 0.38,
+        "HYP": 0.18
+      },
+      "val_macro_auroc": 0.9093857182751022,
+      "test_macro_auroc": 0.9014583354275245,
+      "test_macro_auroc_ci95": [
+        0.8933305470940485,
+        0.9099453149683351
+      ],
+      "test_macro_f1": 0.7143510672055507,
+      "n_params": 559365,
+      "display_name": "Transformer"
+    },
+    "fusion": {
+      "checkpoint": "artifacts/models/fusion_seed1.pt",
+      "seed": 1,
+      "thresholds": {
+        "NORM": 0.46,
+        "MI": 0.24,
+        "STTC": 0.25,
+        "CD": 0.52,
+        "HYP": 0.18
+      },
+      "val_macro_auroc": 0.9266018235203708,
+      "test_macro_auroc": 0.921330274670534,
+      "test_macro_auroc_ci95": [
+        0.9139399365315919,
+        0.9287541632635745
+      ],
+      "test_macro_f1": 0.7364037052962095,
+      "n_params": 2211621,
+      "display_name": "Parallel Fusion (CNN+LSTM+Transformer)"
+    }
+  },
+  "ensemble": {
+    "members": [
+      "cnn",
+      "lstm",
+      "transformer"
+    ],
+    "weights": [
+      0.4,
+      0.5,
+      0.1
+    ],
+    "thresholds": {
+      "NORM": 0.43,
+      "MI": 0.35,
+      "STTC": 0.35,
+      "CD": 0.53,
+      "HYP": 0.29
+    },
+    "val_macro_auroc": 0.9331766934937462,
+    "test_macro_auroc": 0.9260038595641156,
+    "test_macro_f1": 0.754929564369024,
+    "display_name": "Late-fusion Ensemble"
+  }
+}

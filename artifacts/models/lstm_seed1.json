@@ -1,0 +1,170 @@
+{
+  "model": "lstm",
+  "seed": 1,
+  "checkpoint": "/content/drive/MyDrive/ECG-AI-Project/artifacts/models/lstm_seed1.pt",
+  "best_epoch": 14,
+  "best_val_macro_auroc": 0.925632644261392,
+  "n_params": 600966,
+  "train_time_s": 227.3,
+  "epochs_run": 22,
+  "device": "cuda",
+  "torch_version": "2.11.0+cu130",
+  "python": "3.13.15",
+  "git_commit": "not a git repository",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.44491258397530975,
+      "val_macro_auroc": 0.863618548249168,
+      "lr": 0.001,
+      "epoch_time_s": 10.27
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.34026612246527654,
+      "val_macro_auroc": 0.8960554168673518,
+      "lr": 0.001,
+      "epoch_time_s": 10.29
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.3123008451435003,
+      "val_macro_auroc": 0.9048990601191473,
+      "lr": 0.001,
+      "epoch_time_s": 10.3
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.2944612332274405,
+      "val_macro_auroc": 0.9089111930022222,
+      "lr": 0.001,
+      "epoch_time_s": 10.32
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.28913811457514316,
+      "val_macro_auroc": 0.9121095888891935,
+      "lr": 0.001,
+      "epoch_time_s": 10.32
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.27741425933686087,
+      "val_macro_auroc": 0.9167970754579768,
+      "lr": 0.001,
+      "epoch_time_s": 10.35
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.2671921249297674,
+      "val_macro_auroc": 0.9157890057462208,
+      "lr": 0.001,
+      "epoch_time_s": 10.36
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.26044406644190743,
+      "val_macro_auroc": 0.9187834291960844,
+      "lr": 0.001,
+      "epoch_time_s": 10.36
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.25261129048209957,
+      "val_macro_auroc": 0.9206525156838486,
+      "lr": 0.001,
+      "epoch_time_s": 10.37
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.24487488317802159,
+      "val_macro_auroc": 0.924200600070664,
+      "lr": 0.001,
+      "epoch_time_s": 10.37
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.24012874652830402,
+      "val_macro_auroc": 0.9220238190436925,
+      "lr": 0.001,
+      "epoch_time_s": 10.32
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.23458084045501237,
+      "val_macro_auroc": 0.9215253972055457,
+      "lr": 0.001,
+      "epoch_time_s": 10.33
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.2298316370681877,
+      "val_macro_auroc": 0.921247457349011,
+      "lr": 0.001,
+      "epoch_time_s": 10.32
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.2231834125652742,
+      "val_macro_auroc": 0.925632644261392,
+      "lr": 0.001,
+      "epoch_time_s": 10.31
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.21799070145306962,
+      "val_macro_auroc": 0.9216690357328019,
+      "lr": 0.001,
+      "epoch_time_s": 10.33
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.2116979586609294,
+      "val_macro_auroc": 0.923743977399131,
+      "lr": 0.001,
+      "epoch_time_s": 10.31
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.20661722419413733,
+      "val_macro_auroc": 0.9216654284827263,
+      "lr": 0.001,
+      "epoch_time_s": 10.27
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.20171455492017867,
+      "val_macro_auroc": 0.9185339317498491,
+      "lr": 0.0005,
+      "epoch_time_s": 10.29
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.18018425747138284,
+      "val_macro_auroc": 0.9219190016372355,
+      "lr": 0.0005,
+      "epoch_time_s": 10.32
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.1718402582775341,
+      "val_macro_auroc": 0.9204572375916861,
+      "lr": 0.0005,
+      "epoch_time_s": 10.33
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.16665902491031068,
+      "val_macro_auroc": 0.9177720208207688,
+      "lr": 0.0005,
+      "epoch_time_s": 10.34
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.15926439998748151,
+      "val_macro_auroc": 0.9183419750214092,
+      "lr": 0.00025,
+      "epoch_time_s": 10.37
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "model": "lstm",
+  "seed": 0,
+  "checkpoint": "/Users/m.nageswararao/Downloads/ecg-ai-fusion/artifacts/models/timing/lstm_timing.pt",
+  "best_epoch": 1,
+  "best_val_macro_auroc": 0.8620074581230955,
+  "n_params": 600966,
+  "train_time_s": 20.2,
+  "epochs_run": 1,
+  "device": "mps",
+  "torch_version": "2.14.1",
+  "python": "3.12.15",
+  "git_commit": "not a git repository",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.4369410452771276,
+      "val_macro_auroc": 0.8620074581230955,
+      "lr": 0.001,
+      "epoch_time_s": 20.16
+    }
+  ]
+}

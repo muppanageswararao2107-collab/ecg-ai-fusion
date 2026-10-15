@@ -1,0 +1,23 @@
+{
+  "model": "transformer",
+  "seed": 0,
+  "checkpoint": "/Users/m.nageswararao/Downloads/ecg-ai-fusion/artifacts/models/timing/transformer_timing.pt",
+  "best_epoch": 1,
+  "best_val_macro_auroc": 0.8866600264265058,
+  "n_params": 559365,
+  "train_time_s": 16.8,
+  "epochs_run": 1,
+  "device": "mps",
+  "torch_version": "2.14.1",
+  "python": "3.12.15",
+  "git_commit": "not a git repository",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.3783634136455336,
+      "val_macro_auroc": 0.8866600264265058,
+      "lr": 0.001,
+      "epoch_time_s": 16.81
+    }
+  ]
+}

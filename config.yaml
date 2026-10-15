@@ -1,0 +1,78 @@
+# ---------------------------------------------------------------------------
+# Interpretable ECG Abnormality Detection — single configuration file.
+# Every script and the website read their settings from here.
+# Relative paths are resolved from the project root (the folder holding this file).
+# ---------------------------------------------------------------------------
+project_name: "Interpretable ECG Abnormality Detection"
+version: "1.0.0"
+
+paths:
+  ptbxl_dir: "data/ptb-xl"     # folder that contains ptbxl_database.csv, scp_statements.csv, records100/
+  cache_dir: "data/cache"      # prepared arrays (created by scripts/prepare_data.py)
+  artifacts_dir: "artifacts"   # normalization stats, model checkpoints, deployment.json
+  results_dir: "results"       # metrics, tables, figures
+
+data:
+  sampling_rate: 100           # PTB-XL records100 (100 Hz)
+  length: 1000                 # 10 s x 100 Hz
+  classes: [NORM, MI, STTC, CD, HYP]
+  leads: [I, II, III, aVR, aVL, aVF, V1, V2, V3, V4, V5, V6]
+  train_folds: [1, 2, 3, 4, 5, 6, 7, 8]
+  val_folds: [9]
+  test_folds: [10]
+  # Likelihood filter for SCP statements. 0 = keep every diagnostic statement
+  # (same convention as the PTB-XL benchmark by Strodthoff et al.).
+  min_likelihood: 0
+
+training:
+  seeds: [0, 1, 2]
+  batch_size: 64
+  max_epochs: 40
+  patience: 8                  # early stopping on validation macro-AUROC
+  lr: 0.001
+  weight_decay: 0.01
+  grad_clip: 1.0
+  use_pos_weight: false        # same choice applies to every model
+  augment: true                # identical light augmentation for every model
+  aug_scale: 0.1               # random amplitude scaling in [1-s, 1+s]
+  aug_noise_std: 0.03          # Gaussian noise (normalized units)
+  device: "auto"               # auto -> cuda, then mps (Apple Silicon), then cpu
+
+models:
+  cnn:
+    width: 64
+    kernel_size: 7
+    dropout: 0.2
+  lstm:
+    stem_channels: 64          # one strided conv (documented "minimal stem"): 1000 -> 250 steps
+    stem_stride: 4
+    hidden: 128
+    layers: 2
+    dropout: 0.2
+  transformer:
+    d_model: 128
+    patch_size: 10             # 1000 samples -> 100 tokens of 0.1 s each
+    layers: 4
+    heads: 8
+    ff_dim: 256
+    dropout: 0.1
+  fusion:
+    fusion_dim: 128
+    aux_weight: 0.3            # deep supervision: each branch also predicts on its own
+    branch_dropout: 0.1        # randomly hides one branch per sample during training
+    dropout: 0.2
+
+evaluation:
+  bootstrap_samples: 1000
+  ensemble_weight_step: 0.1    # grid step for late-fusion weights (tuned on validation only)
+
+xai:
+  ig_steps: 50
+  deletion_fraction: 0.1       # mask the top 10 % most-attributed time
+  deletion_segment: 10         # segment length in samples (0.1 s)
+  deletion_samples_per_class: 40
+  random_repeats: 5
+
+app:
+  max_upload_mb: 20
+  max_windows: 30              # longest upload analysed = 30 x 10 s = 5 minutes
