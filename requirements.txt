@@ -12,3 +12,4 @@ pyyaml>=6.0
 streamlit>=1.37
 plotly>=5.20
 pytest>=8.0
+huggingface_hub>=0.30.0

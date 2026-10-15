@@ -145,16 +145,54 @@ def get_norm():
     return load_normalization(p) if p.exists() else None
 
 
-@st.cache_resource
+@st.cache_resource(show_spinner="Loading ECG data …")
 def _load_cache(_stamp: float):
-    """Full prepared cache if present, otherwise the test-fold-only copy (enough for the demo picker)."""
+    """Load local prepared data or the private Hugging Face demo cache."""
     cache = cfg_path(CFG, "cache_dir")
-    for x_name, m_name in [("X.npy", "meta.csv"), ("test_X.npy", "test_meta.csv")]:
-        if (cache / x_name).exists() and (cache / m_name).exists():
-            X, meta = np.load(cache / x_name, mmap_mode="r"), pd.read_csv(cache / m_name)
+
+    for x_name, m_name in [
+        ("X.npy", "meta.csv"),
+        ("test_X.npy", "test_meta.csv"),
+    ]:
+        x_path, m_path = cache / x_name, cache / m_name
+        if x_path.exists() and m_path.exists():
+            X = np.load(x_path, mmap_mode="r")
+            meta = pd.read_csv(m_path)
             if len(meta) == X.shape[0]:
                 return X, meta.reset_index(drop=True)
-    return None, None
+
+    try:
+        from huggingface_hub import hf_hub_download
+
+        token = st.secrets["HF_TOKEN"]
+        repo_id = st.secrets["HF_DATASET_REPO"]
+
+        x_path = hf_hub_download(
+            repo_id=repo_id,
+            repo_type="dataset",
+            filename="test_X.npy",
+            token=token,
+        )
+        m_path = hf_hub_download(
+            repo_id=repo_id,
+            repo_type="dataset",
+            filename="test_meta.csv",
+            token=token,
+        )
+
+        X = np.load(x_path, mmap_mode="r")
+        meta = pd.read_csv(m_path)
+
+        if len(meta) != X.shape[0]:
+            return None, None
+        if "split" not in meta.columns or not (meta["split"] == "test").all():
+            return None, None
+
+        return X, meta.reset_index(drop=True)
+
+    except Exception as exc:
+        print(f"Could not load the PTB-XL demo cache: {exc}")
+        return None, None
 
 
 def get_cache():
